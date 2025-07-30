@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Star, Zap, Users, BookOpen, Code, MessageCircle, ExternalLink, Github, Linkedin, Calendar, Award, Target, Rocket, Menu, X, Sparkles, Brain, Globe, ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Zap, Users, BookOpen, Code, MessageCircle, Github, Linkedin, Calendar, Award, Target, Rocket, Menu, X, ChevronDown } from 'lucide-react';
 import AudioManager from './components/AudioManager';
 import SoundEffects from './components/SoundEffects';
+
+// Import team member images (replace with your actual image paths)
+import fardeenImg from './team/fardeen.jpg';
+import muneerImg from './team/muneer.jpg';
+import kanakImg from './team/kanak.jpg';
+import tanishaImg from './team/tanisha.jpg';
+import swastikaImg from './team/swastika.jpg';
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [soundEnabled] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -58,6 +66,102 @@ function App() {
     { title: "Industry Connections", icon: <Users className="w-5 h-5 sm:w-6 sm:h-6" />, color: "text-purple-400" }
   ];
 
+  const teamMembers = [
+    {
+      name: "Fardeen Ansari",
+      role: "Founder & CEO",
+      bio: "Visionary leader driving innovation and growth in AI technologies.",
+      social: {
+        linkedin: "https://www.linkedin.com/in/fardeen-ansari-642a352aa",
+        github: "#"
+      },
+      gradient: "from-purple-500 to-pink-500",
+      image: fardeenImg
+    },
+    {
+      name: "Muneer Ali",
+      role: "Developer & Tech Manager",
+      bio: "Technical expert overseeing development and implementation of cutting-edge solutions.",
+      social: {
+        linkedin: "https://www.linkedin.com/in/muneer-ali",
+        github: "#"
+      },
+      gradient: "from-blue-500 to-cyan-500",
+      image: muneerImg
+    },
+    {
+      name: "Kanak Kaushik",
+      role: "Social Media & PR Manager",
+      bio: "Creative strategist building our brand presence and community engagement.",
+      social: {
+        linkedin: "https://www.linkedin.com/in/kanak-kaushik-6867a2275",
+        github: "#"
+      },
+      gradient: "from-green-500 to-teal-500",
+      image: kanakImg
+    },
+    {
+      name: "Tanisha Garg",
+      role: "Graphic Designer",
+      bio: "Visual storyteller crafting compelling designs that communicate our mission.",
+      social: {
+        linkedin: "https://www.linkedin.com/in/tanisha-garg-55b9a61ba",
+        github: "#"
+      },
+      gradient: "from-orange-500 to-red-500",
+      image: tanishaImg
+    },
+    {
+      name: "Swastika Bansal",
+      role: "Anchor",
+      bio: "Engaging host bringing our events and content to life with charismatic delivery.",
+      social: {
+        linkedin: "https://www.linkedin.com/in/swastika-bansal-1b90a82a6",
+        github: "#"
+      },
+      gradient: "from-yellow-500 to-amber-500",
+      image: swastikaImg
+    }
+  ];
+
+  // Animation variants
+  const cardVariants = {
+    offscreen: {
+      y: 50,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8
+      }
+    }
+  };
+
+  const imageVariants = {
+    hover: {
+      scale: 1.05,
+      rotate: 2,
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const glowVariants = {
+    hover: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -67,14 +171,14 @@ function App() {
   };
 
   const handleHover = () => {
-    if (soundEnabled && (window as any).playHoverSound) {
-      (window as any).playHoverSound();
+    if (soundEnabled && (window as unknown as { playHoverSound?: () => void }).playHoverSound) {
+      (window as unknown as { playHoverSound?: () => void }).playHoverSound();
     }
   };
 
   const handleClick = () => {
-    if (soundEnabled && (window as any).playClickSound) {
-      (window as any).playClickSound();
+    if (soundEnabled && (window as unknown as { playClickSound?: () => void }).playClickSound) {
+      (window as unknown as { playClickSound?: () => void }).playClickSound();
     }
   };
 
@@ -142,7 +246,7 @@ function App() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {['About', 'Features', 'Collaboration', 'Join Us'].map((item, index) => (
+              {['About', 'Features', 'Team', 'Collaboration', 'Join Us'].map((item, index) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`} 
@@ -173,7 +277,7 @@ function App() {
           {isMenuOpen && (
             <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-gray-800/50 animate-slide-down">
               <div className="px-4 py-6 space-y-4">
-                {['About', 'Features', 'Collaboration', 'Join Us'].map((item, index) => (
+                {['About', 'Features', 'Team', 'Collaboration', 'Join Us'].map((item, index) => (
                   <a 
                     key={item}
                     href={`#${item.toLowerCase().replace(' ', '-')}`} 
@@ -304,6 +408,109 @@ function App() {
                 <div className="absolute top-4 right-4 w-2 h-2 bg-cyan-400 rounded-full animate-ping opacity-0 group-hover:opacity-100"></div>
                 <div className="absolute bottom-4 left-4 w-1 h-1 bg-purple-400 rounded-full animate-ping opacity-0 group-hover:opacity-100" style={{ animationDelay: '0.5s' }}></div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Enhanced Team Section with Stunning Animations */}
+      <section id="team" className="py-20 sm:py-24 lg:py-28 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 sm:mb-20">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent"
+            >
+              Meet Our Team
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+            >
+              The brilliant minds powering Spark Tech AI Hub's vision and innovation
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12">
+            {teamMembers.map((member, index) => (
+              <motion.div 
+                key={index}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={cardVariants}
+                className="group relative"
+              >
+                <div className="relative bg-gray-900/30 backdrop-blur-xl rounded-3xl p-8 sm:p-10 border border-gray-800/50 hover:border-cyan-500/50 transition-all duration-500 overflow-hidden h-full flex flex-col">
+                  {/* Gradient Glow Effect */}
+                  <motion.div 
+                    variants={glowVariants}
+                    initial={{ opacity: 0 }}
+                    className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-20 blur-xl`}
+                  />
+                  
+                  {/* Floating Particles */}
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-cyan-400 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ animationDelay: '0.5s' }}></div>
+                  
+                  <div className="relative z-10 flex flex-col items-center h-full">
+                    {/* Team Member Photo with Enhanced Styling */}
+                    <motion.div
+                      variants={imageVariants}
+                      className="w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 mb-8 rounded-full overflow-hidden border-4 border-white/10 group-hover:border-cyan-400/30 transition-all duration-500 shadow-2xl relative"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-full"></div>
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover object-center"
+                      />
+                      {/* Hover shine effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-all duration-1000"></div>
+                    </motion.div>
+                    
+                    <h3 className="text-2xl sm:text-3xl font-bold text-center text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                      {member.name}
+                    </h3>
+                    <p className="text-center text-purple-400 mb-4 sm:mb-6 text-lg font-medium">
+                      {member.role}
+                    </p>
+                    <p className="text-gray-300 text-center text-base leading-relaxed mb-6 flex-grow">
+                      {member.bio}
+                    </p>
+                    
+                    {/* Social Links */}
+                    <div className="flex justify-center space-x-6 mt-auto">
+                      <a 
+                        href={member.social.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-125"
+                        onMouseEnter={handleHover}
+                        onClick={handleClick}
+                      >
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                      <a 
+                        href={member.social.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-gray-200 transition-colors duration-300 transform hover:scale-125"
+                        onMouseEnter={handleHover}
+                        onClick={handleClick}
+                      >
+                        <Github className="w-6 h-6" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -509,7 +716,7 @@ function App() {
               href="https://chat.whatsapp.com/DL3S2U6W6zHJFREu11Oht0?mode=ac_t"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-green-400 transition-all duration-300 transform hover:scale-110"
+              className="text-gray-400 hover:text-green-400 transition-colors duration-300 transform hover:scale-110"
               onMouseEnter={handleHover}
               onClick={handleClick}
             >
@@ -519,7 +726,7 @@ function App() {
               href="https://www.linkedin.com/in/fardeen-ansari-642a352aa"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
+              className="text-gray-400 hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
               onMouseEnter={handleHover}
               onClick={handleClick}
             >
