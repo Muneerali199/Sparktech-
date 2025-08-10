@@ -11,6 +11,11 @@ import kanakImg from './team/kanak.jpg';
 import tanishaImg from './team/tanisha.jpg';
 import swastikaImg from './team/swastika.jpg';
 
+// Import sponsor logos (replace with your actual image paths)
+import sponsor1 from './team/OpsTree.png';
+import sponsor2 from './sponsors/pw.png';
+import sponsor3 from './sponsors/sponsor3.png';
+
 function App() {
   const [scrollY, setScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -124,6 +129,27 @@ function App() {
     }
   ];
 
+  const sponsors = [
+    {
+      name: "Tech Innovators Inc.",
+      logo: sponsor1,
+      url: "https://example.com/tech-innovators",
+      description: "Leading the way in AI research and development"
+    },
+    {
+      name: "Future Systems",
+      logo: sponsor2,
+      url: "https://example.com/future-systems",
+      description: "Building the infrastructure for tomorrow's technology"
+    },
+    {
+      name: "Quantum Solutions",
+      logo: sponsor3,
+      url: "https://example.com/quantum-solutions",
+      description: "Pioneering quantum computing applications"
+    }
+  ];
+
   // Animation variants
   const cardVariants = {
     offscreen: {
@@ -164,6 +190,10 @@ function App() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    if (soundEnabled) {
+      (window as unknown as { playClickSound?: () => void }).playClickSound?.();
+    }
+    }
   };
 
   const closeMenu = () => {
@@ -171,14 +201,14 @@ function App() {
   };
 
   const handleHover = () => {
-    if (soundEnabled && (window as unknown as { playHoverSound?: () => void }).playHoverSound) {
-      (window as unknown as { playHoverSound?: () => void }).playHoverSound();
+    if (soundEnabled) {
+      (window as unknown as { playHoverSound?: () => void }).playHoverSound?.();
     }
   };
 
   const handleClick = () => {
-    if (soundEnabled && (window as unknown as { playClickSound?: () => void }).playClickSound) {
-      (window as unknown as { playClickSound?: () => void }).playClickSound();
+    if (soundEnabled) {
+      (window as unknown as { playClickSound?: () => void }).playClickSound?.();
     }
   };
 
@@ -246,7 +276,7 @@ function App() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {['About', 'Features', 'Team', 'Collaboration', 'Join Us'].map((item, index) => (
+              {['About', 'Features', 'Team', 'Sponsors', 'Collaboration', 'Join Us'].map((item, index) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`} 
@@ -265,7 +295,6 @@ function App() {
               onClick={toggleMenu}
               className="md:hidden p-3 text-gray-300 hover:text-cyan-400 transition-all duration-300 relative group"
               onMouseEnter={handleHover}
-              onClick={handleClick}
               aria-label="Toggle menu"
             >
               <div className="absolute inset-0 bg-cyan-500/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
@@ -277,7 +306,7 @@ function App() {
           {isMenuOpen && (
             <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-gray-800/50 animate-slide-down">
               <div className="px-4 py-6 space-y-4">
-                {['About', 'Features', 'Team', 'Collaboration', 'Join Us'].map((item, index) => (
+                {['About', 'Features', 'Team', 'Sponsors', 'Collaboration', 'Join Us'].map((item, index) => (
                   <a 
                     key={item}
                     href={`#${item.toLowerCase().replace(' ', '-')}`} 
@@ -512,6 +541,104 @@ function App() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* New Sponsors Section */}
+      <section id="sponsors" className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16 sm:mb-20">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent"
+            >
+              Our Sponsors
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+            >
+              We're grateful for the support of these visionary organizations
+            </motion.p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-16">
+            {sponsors.map((sponsor, index) => (
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative"
+              >
+                <div className="relative bg-gray-900/30 backdrop-blur-xl rounded-3xl p-8 sm:p-10 border border-gray-800/50 hover:border-yellow-500/50 transition-all duration-500 overflow-hidden h-full flex flex-col items-center">
+                  {/* Gradient Glow Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-red-500/10 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500"></div>
+                  
+                  {/* Sponsor Logo */}
+                  <div className="relative z-10 w-full h-32 flex items-center justify-center mb-8">
+                    <img 
+                      src={sponsor.logo} 
+                      alt={sponsor.name}
+                      className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                  </div>
+                  
+                  <h3 className="text-2xl sm:text-3xl font-bold text-center text-white mb-4 group-hover:text-yellow-400 transition-colors duration-300">
+                    {sponsor.name}
+                  </h3>
+                  <p className="text-gray-300 text-center text-base leading-relaxed mb-6">
+                    {sponsor.description}
+                  </p>
+                  
+                  <a 
+                    href={sponsor.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="mt-auto px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full text-white font-medium hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105"
+                    onMouseEnter={handleHover}
+                    onClick={handleClick}
+                  >
+                    Visit Website
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Become a Sponsor CTA */}
+          <div className="mt-20 text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative bg-gradient-to-br from-purple-900/30 to-blue-900/30 backdrop-blur-xl rounded-3xl p-8 sm:p-12 border border-purple-500/30 overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-transparent to-blue-600/10 animate-gradient-x"></div>
+              <div className="relative z-10">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">Want to become a sponsor?</h3>
+                <p className="text-gray-300 mb-8 max-w-3xl mx-auto">
+                  Join our growing list of partners and get exposure to thousands of AI enthusiasts, students, and professionals.
+                </p>
+                <a 
+                  href="mailto:sponsors@sparktechaihub.com" 
+                  className="inline-block px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full text-white font-semibold hover:from-purple-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/30"
+                  onMouseEnter={handleHover}
+                  onClick={handleClick}
+                >
+                  Contact Us About Sponsorship
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
