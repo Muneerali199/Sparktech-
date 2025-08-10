@@ -12,9 +12,41 @@ import tanishaImg from './team/tanisha.jpg';
 import swastikaImg from './team/swastika.jpg';
 
 // Import sponsor logos (replace with your actual image paths)
-import sponsor1 from './team/OpsTree.png';
-import sponsor2 from './sponsors/pw.png';
+import sponsor1 from './sponsors/sponsor1.png';
+import sponsor2 from './sponsors/sponsor2.png';
 import sponsor3 from './sponsors/sponsor3.png';
+
+interface Feature {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  gradient: string;
+}
+
+interface Skill {
+  title: string;
+  icon: React.ReactNode;
+  color: string;
+}
+
+interface TeamMember {
+  name: string;
+  role: string;
+  bio: string;
+  social: {
+    linkedin: string;
+    github: string;
+  };
+  gradient: string;
+  image: string;
+}
+
+interface Sponsor {
+  name: string;
+  logo: string;
+  url: string;
+  description: string;
+}
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -37,7 +69,7 @@ function App() {
     };
   }, []);
 
-  const features = [
+  const features: Feature[] = [
     {
       icon: <BookOpen className="w-6 h-6 sm:w-8 sm:h-8" />,
       title: "Deep Dives into AI & Emerging Technologies",
@@ -64,14 +96,14 @@ function App() {
     }
   ];
 
-  const skills = [
+  const skills: Skill[] = [
     { title: "Skills Development", icon: <Award className="w-5 h-5 sm:w-6 sm:h-6" />, color: "text-yellow-400" },
     { title: "Career Preparation", icon: <Target className="w-5 h-5 sm:w-6 sm:h-6" />, color: "text-green-400" },
     { title: "Practical AI Tools", icon: <Code className="w-5 h-5 sm:w-6 sm:h-6" />, color: "text-blue-400" },
     { title: "Industry Connections", icon: <Users className="w-5 h-5 sm:w-6 sm:h-6" />, color: "text-purple-400" }
   ];
 
-  const teamMembers = [
+  const teamMembers: TeamMember[] = [
     {
       name: "Fardeen Ansari",
       role: "Founder & CEO",
@@ -129,7 +161,7 @@ function App() {
     }
   ];
 
-  const sponsors = [
+  const sponsors: Sponsor[] = [
     {
       name: "Tech Innovators Inc.",
       logo: sponsor1,
@@ -190,9 +222,8 @@ function App() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    if (soundEnabled) {
-      (window as unknown as { playClickSound?: () => void }).playClickSound?.();
-    }
+    if (soundEnabled && (window as any).playClickSound) {
+      (window as any).playClickSound();
     }
   };
 
@@ -201,14 +232,14 @@ function App() {
   };
 
   const handleHover = () => {
-    if (soundEnabled) {
-      (window as unknown as { playHoverSound?: () => void }).playHoverSound?.();
+    if (soundEnabled && (window as any).playHoverSound) {
+      (window as any).playHoverSound();
     }
   };
 
   const handleClick = () => {
-    if (soundEnabled) {
-      (window as unknown as { playClickSound?: () => void }).playClickSound?.();
+    if (soundEnabled && (window as any).playClickSound) {
+      (window as any).playClickSound();
     }
   };
 
@@ -276,7 +307,7 @@ function App() {
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {['About', 'Features', 'Team', 'Sponsors', 'Collaboration', 'Join Us'].map((item, index) => (
+              {['About', 'Features', 'Team', 'Sponsors', 'Collaboration', 'Join Us'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`} 
