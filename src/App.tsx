@@ -834,7 +834,7 @@ function App() {
               </a>
               
               <a 
-                href="https://www.linkedin.com/in/fardeen-ansari-642a352aa"
+                href="https://www.linkedin.com/company/spark-tech-ai-hub/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-blue-500/50 text-sm sm:text-base overflow-hidden"
@@ -844,7 +844,7 @@ function App() {
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10 flex items-center justify-center">
                   <Linkedin className="w-5 h-5 sm:w-6 sm:h-6 mr-2 group-hover:rotate-12 transition-transform duration-300" />
-                  Connect with Fardeen
+                  Connect with us
                 </div>
                 <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </a>
