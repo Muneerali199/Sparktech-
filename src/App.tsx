@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { easeInOut } from 'framer-motion';
 import { Zap, Users, BookOpen, Code, MessageCircle, Github, Linkedin, Calendar, Award, Target, Rocket, Menu, X, ChevronDown } from 'lucide-react';
 import AudioManager from './components/AudioManager';
 import SoundEffects from './components/SoundEffects';
@@ -12,9 +13,9 @@ import tanishaImg from './team/tanisha.jpg';
 import swastikaImg from './team/swastika.jpg';
 
 // Import sponsor logos (replace with your actual image paths)
-import sponsor1 from './sponsors/sponsor1.png';
-import sponsor2 from './sponsors/sponsor2.png';
-import sponsor3 from './sponsors/sponsor3.png';
+import sponsor1 from './team/pw.png';
+import sponsor2 from './team/OpsTree.png';
+import sponsor3 from './team/sponsor3.png';
 
 interface Feature {
   icon: React.ReactNode;
@@ -53,6 +54,10 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [soundEnabled] = useState(true);
+  interface WindowWithSounds extends Window {
+    playHoverSound?: () => void;
+    playClickSound?: () => void;
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -192,7 +197,7 @@ function App() {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         bounce: 0.4,
         duration: 0.8
       }
@@ -205,7 +210,7 @@ function App() {
       rotate: 2,
       transition: {
         duration: 0.3,
-        ease: "easeOut"
+        ease: easeInOut
       }
     }
   };
@@ -215,15 +220,15 @@ function App() {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: easeInOut
       }
     }
   };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    if (soundEnabled && (window as any).playClickSound) {
-      (window as any).playClickSound();
+      if (soundEnabled) {
+        (window as WindowWithSounds).playClickSound?.();
     }
   };
 
@@ -232,14 +237,14 @@ function App() {
   };
 
   const handleHover = () => {
-    if (soundEnabled && (window as any).playHoverSound) {
-      (window as any).playHoverSound();
+    if (soundEnabled) {
+      (window as WindowWithSounds).playHoverSound?.();
     }
   };
 
   const handleClick = () => {
-    if (soundEnabled && (window as any).playClickSound) {
-      (window as any).playClickSound();
+    if (soundEnabled) {
+      (window as WindowWithSounds).playClickSound?.();
     }
   };
 
