@@ -11,6 +11,10 @@ import muneerImg from './team/muneer.jpg';
 import kanakImg from './team/kanak.jpg';
 import tanishaImg from './team/tanisha.jpg';
 import swastikaImg from './team/swastika.jpg';
+import alishaImg from './team/alisha.jpg';
+import kasheeImg from './team/kashee.jpg';
+import mohdImg from './team/mohd.jpg';
+import arpitImg from './team/arpit.jpg';
 
 // Import sponsor logos (replace with your actual image paths)
 import sponsor1 from './team/pw.png';
@@ -163,6 +167,50 @@ function App() {
       },
       gradient: "from-yellow-500 to-amber-500",
       image: swastikaImg
+    },
+    {
+      name: "Alisha Sagar",
+      role: "Team Member",
+      bio: "Passionate contributor dedicated to advancing AI education and community engagement.",
+      social: {
+        linkedin: "#",
+        github: "#"
+      },
+      gradient: "from-pink-500 to-rose-500",
+      image: alishaImg
+    },
+    {
+      name: "Kashee Keshwani",
+      role: "Team Member",
+      bio: "Enthusiastic team member committed to fostering innovation and learning in tech.",
+      social: {
+        linkedin: "#",
+        github: "#"
+      },
+      gradient: "from-violet-500 to-purple-500",
+      image: kasheeImg
+    },
+    {
+      name: "Mohd Arham",
+      role: "Team Member",
+      bio: "Dedicated professional driving impactful initiatives in the AI community.",
+      social: {
+        linkedin: "#",
+        github: "#"
+      },
+      gradient: "from-cyan-500 to-blue-500",
+      image: mohdImg
+    },
+    {
+      name: "Arpit Sharma",
+      role: "Team Member",
+      bio: "Creative thinker bringing fresh perspectives to technology and innovation.",
+      social: {
+        linkedin: "#",
+        github: "#"
+      },
+      gradient: "from-orange-500 to-amber-500",
+      image: arpitImg
     }
   ];
 
