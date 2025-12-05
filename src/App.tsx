@@ -15,6 +15,7 @@ import alishaImg from './team/alisha.jpg';
 import kasheeImg from './team/kashee.jpg';
 import mohdImg from './team/mohd.jpg';
 import arpitImg from './team/arpit.jpg';
+import misbahImg from './team/misbah.jpg';
 
 // Import sponsor logos (replace with your actual image paths)
 import sponsor1 from './team/pw.png';
@@ -211,6 +212,17 @@ function App() {
       },
       gradient: "from-orange-500 to-amber-500",
       image: arpitImg
+    },
+    {
+      name: "Misbah",
+      role: "Team Member",
+      bio: "Enthusiastic contributor passionate about technology and innovation.",
+      social: {
+        linkedin: "https://www.linkedin.com/in/misbah-a-69a2b1373",
+        github: "https://github.com/Misbah-55"
+      },
+      gradient: "from-purple-500 to-indigo-500",
+      image: misbahImg
     }
   ];
 
