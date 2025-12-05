@@ -173,8 +173,8 @@ function App() {
       role: "Team Member",
       bio: "Passionate contributor dedicated to advancing AI education and community engagement.",
       social: {
-        linkedin: "#",
-        github: "#"
+        linkedin: "https://www.linkedin.com/in/alisha-sagar-3b4052302/",
+        github: "https://github.com/Alisha-sagar"
       },
       gradient: "from-pink-500 to-rose-500",
       image: alishaImg
@@ -184,8 +184,8 @@ function App() {
       role: "Team Member",
       bio: "Enthusiastic team member committed to fostering innovation and learning in tech.",
       social: {
-        linkedin: "#",
-        github: "#"
+        linkedin: "https://www.linkedin.com/in/kasheekeswani/",
+        github: "https://github.com/kasheekeswani"
       },
       gradient: "from-violet-500 to-purple-500",
       image: kasheeImg
@@ -206,8 +206,8 @@ function App() {
       role: "Team Member",
       bio: "Creative thinker bringing fresh perspectives to technology and innovation.",
       social: {
-        linkedin: "#",
-        github: "#"
+        linkedin: "https://www.linkedin.com/in/arpit-kumar-sharma-291255358",
+        github: "https://github.com/arpitsharma1879-hue"
       },
       gradient: "from-orange-500 to-amber-500",
       image: arpitImg
