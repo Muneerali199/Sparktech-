@@ -206,7 +206,7 @@ function App() {
       role: "Team Member",
       bio: "Creative thinker bringing fresh perspectives to technology and innovation.",
       social: {
-        linkedin: "https://www.linkedin.com/in/arpit-kumar-sharma-291255358",
+        linkedin: "https://www.linkedin.com/in/arpit-kumar-sharma-291255358/",
         github: "https://github.com/arpitsharma1879-hue"
       },
       gradient: "from-orange-500 to-amber-500",
