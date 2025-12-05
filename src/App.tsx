@@ -9,8 +9,6 @@ import SoundEffects from './components/SoundEffects';
 import fardeenImg from './team/fardeen.jpg';
 import muneerImg from './team/muneer.jpg';
 import kanakImg from './team/kanak.jpg';
-import tanishaImg from './team/tanisha.jpg';
-import swastikaImg from './team/swastika.jpg';
 import alishaImg from './team/alisha.jpg';
 import kasheeImg from './team/kashee.jpg';
 import mohdImg from './team/mohd.jpg';
