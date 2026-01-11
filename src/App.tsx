@@ -115,9 +115,9 @@ function App() {
 
   const teamMembers: TeamMember[] = [
     {
-      name: "Fardeen Ansari",
+      name: "Fardeen Princess Ansari",
       role: "Founder & CEO",
-      bio: "Visionary leader driving innovation and growth in AI technologies.",
+      bio: "Visionary leader and princess of innovation, driving growth in AI technologies with passion and creativity.",
       social: {
         linkedin: "https://www.linkedin.com/in/fardeen-ansari-642a352aa",
         github: "#"
@@ -419,37 +419,46 @@ function App() {
         </div>
       </nav>
 
-      {/* Enhanced Hero Section */}
+      {/* Enhanced Hero Section - Cartoon Style */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-0">
         <div className="text-center max-w-5xl mx-auto">
           <div 
             className="transform transition-all duration-1000"
             style={{ transform: `translateY(${scrollY * 0.1}px)` }}
           >
-            {/* Floating Elements */}
+            {/* Floating Cartoon Elements */}
             <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-float"></div>
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-float-delayed"></div>
             
+            {/* Fun Cartoon Decorations */}
+            <div className="absolute top-10 left-10 text-4xl animate-bounce" style={{ animationDelay: '0.2s' }}>⭐</div>
+            <div className="absolute top-20 right-20 text-3xl animate-bounce" style={{ animationDelay: '0.5s' }}>✨</div>
+            <div className="absolute bottom-20 left-32 text-5xl animate-bounce" style={{ animationDelay: '0.8s' }}>💫</div>
+            <div className="absolute bottom-32 right-16 text-4xl animate-bounce" style={{ animationDelay: '1s' }}>🎨</div>
+            
             <div className="relative">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x leading-tight cartoon-text">
                 Welcome to Spark Tech AI Hub! 
                 <span className="inline-block animate-bounce ml-2">🚀</span>
               </h1>
               
               <div className="relative mb-8 sm:mb-10">
-                <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-6 sm:mb-8 leading-relaxed animate-fade-in-up px-2">
+                <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-6 sm:mb-8 leading-relaxed animate-fade-in-up px-2 cartoon-bounce">
                   Get ready to ignite your potential where{' '}
-                  <span className="text-cyan-400 font-semibold relative">
+                  <span className="text-cyan-400 font-semibold relative cartoon-wiggle inline-block">
                     Artificial Intelligence
                     <div className="absolute inset-0 bg-cyan-400/20 blur-lg animate-pulse"></div>
                   </span>{' '}
                   meets cutting-edge learning technologies.
+                  <span className="inline-block animate-bounce ml-2">🎯</span>
                 </p>
                 
                 <p className="text-lg sm:text-xl text-gray-400 mb-10 sm:mb-12 max-w-4xl mx-auto animate-fade-in-up leading-relaxed px-2" style={{ animationDelay: '0.3s' }}>
                   We're building a vibrant community of curious minds, change-makers, and tech enthusiasts, 
                   bringing you closer through live events, workshops, and meetups across India! 
                   <span className="inline-block animate-pulse">🇮🇳✨</span>
+                  <span className="inline-block animate-bounce ml-2" style={{ animationDelay: '0.5s' }}>🎪</span>
+                  <span className="inline-block animate-bounce ml-2" style={{ animationDelay: '0.7s' }}>🎊</span>
                 </p>
               </div>
 
