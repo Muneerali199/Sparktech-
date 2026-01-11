@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { easeInOut } from 'framer-motion';
-import { Zap, Users, BookOpen, Code, MessageCircle, Github, Linkedin, Calendar, Award, Target, Rocket, Menu, X, ChevronDown, Snowflake, Flame, Trophy, Clock, MapPin, ExternalLink } from 'lucide-react';
+import { Zap, Users, BookOpen, Code, MessageCircle, Github, Linkedin, Calendar, Award, Target, Rocket, Menu, X, ChevronDown } from 'lucide-react';
 import AudioManager from './components/AudioManager';
 import SoundEffects from './components/SoundEffects';
 
@@ -538,16 +538,14 @@ function App() {
         </div>
       </section>
 
-      {/* ❄️🔥 SnowFrost Hackathon 2026 Section 🔥❄️ */}
+      {/* ❄️🔥 SnowFrost Hackathon 2026 - CANCELLED ❄️🔥 */}
       <section id="hackathon" className="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Animated Winter Background Effects */}
+        {/* Animated Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 left-10 w-3 h-3 bg-cyan-400 rounded-full animate-float opacity-60"></div>
-          <div className="absolute top-20 right-20 w-2 h-2 bg-blue-300 rounded-full animate-float-delayed opacity-60"></div>
-          <div className="absolute bottom-20 left-20 w-2 h-2 bg-cyan-300 rounded-full animate-float-slow opacity-60"></div>
-          <div className="absolute bottom-10 right-10 w-3 h-3 bg-blue-400 rounded-full animate-float opacity-60"></div>
-          <div className="absolute top-1/2 left-1/4 w-2 h-2 bg-cyan-200 rounded-full animate-pulse opacity-40"></div>
-          <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-blue-200 rounded-full animate-pulse opacity-40"></div>
+          <div className="absolute top-10 left-10 w-3 h-3 bg-red-400 rounded-full animate-float opacity-60"></div>
+          <div className="absolute top-20 right-20 w-2 h-2 bg-red-300 rounded-full animate-float-delayed opacity-60"></div>
+          <div className="absolute bottom-20 left-20 w-2 h-2 bg-red-300 rounded-full animate-float-slow opacity-60"></div>
+          <div className="absolute bottom-10 right-10 w-3 h-3 bg-red-400 rounded-full animate-float opacity-60"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
@@ -560,236 +558,91 @@ function App() {
             className="text-center mb-16 sm:mb-20"
           >
             <div className="flex items-center justify-center gap-4 mb-6 sm:mb-8 flex-wrap">
-              <Snowflake className="w-10 h-10 sm:w-12 sm:h-12 text-cyan-400 animate-spin-slow" />
-              <Flame className="w-10 h-10 sm:w-12 sm:h-12 text-orange-500 animate-pulse" />
-              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-orange-500 bg-clip-text text-transparent animate-gradient-x px-2">
+              <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold bg-gradient-to-r from-red-400 via-orange-400 to-red-500 bg-clip-text text-transparent animate-gradient-x px-2">
                 SNOWFROST HACKATHON 2026
               </h2>
-              <Flame className="w-10 h-10 sm:w-12 sm:h-12 text-orange-500 animate-pulse" />
-              <Snowflake className="w-10 h-10 sm:w-12 sm:h-12 text-cyan-400 animate-spin-slow" />
             </div>
             
-            <motion.p 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4"
+              className="relative bg-gradient-to-br from-red-900/40 to-orange-900/40 backdrop-blur-xl rounded-3xl p-8 sm:p-12 lg:p-16 border border-red-500/30 overflow-hidden max-w-4xl mx-auto"
             >
-              Ideas get tested. Skills get exposed.
-            </motion.p>
-            
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-lg sm:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
-            >
-              Think you've got what it takes? SnowFrost Hackathon is not for spectators—it's for builders who can turn ideas into working solutions.
-            </motion.p>
-          </motion.div>
-
-          {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 mb-16">
-            {/* Left Column - Event Details */}
-            <div className="space-y-8">
-              {/* Domains Card */}
-              <motion.div 
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="group relative bg-gradient-to-br from-cyan-900/30 to-blue-900/30 backdrop-blur-xl rounded-3xl p-8 border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-500 overflow-hidden"
-                onMouseEnter={handleHover}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-6">
-                    <Code className="w-8 h-8 text-cyan-400" />
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white">🧠 Domains</h3>
-                  </div>
-                  <div className="space-y-3 text-gray-300">
-                    {['AI', 'Blockchain', 'Web3', 'Cybersecurity', 'Open Innovation'].map((domain, index) => (
-                      <div 
-                        key={index}
-                        className="flex items-center gap-3 bg-black/30 rounded-lg p-3 hover:bg-black/50 transition-all duration-300"
-                      >
-                        <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-                        <span className="text-lg">{domain}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Participation & Rewards Card */}
-              <motion.div 
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="group relative bg-gradient-to-br from-purple-900/30 to-pink-900/30 backdrop-blur-xl rounded-3xl p-8 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-500 overflow-hidden"
-                onMouseEnter={handleHover}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative z-10 space-y-6">
-                  <div>
-                    <div className="flex items-center gap-3 mb-4">
-                      <Users className="w-8 h-8 text-purple-400" />
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white">👤👥 Participation</h3>
-                    </div>
-                    <p className="text-lg text-gray-300">Solo / Duo / Team</p>
-                  </div>
-                  
-                  <div className="border-t border-gray-700/50 pt-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <Trophy className="w-8 h-8 text-yellow-400" />
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white">🏆 Rewards</h3>
-                    </div>
-                    <p className="text-lg text-gray-300">Prizes, certificates, and serious recognition</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Right Column - Timeline/Roadmap */}
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="sticky top-24">
-                <div className="group relative bg-gradient-to-br from-orange-900/30 to-red-900/30 backdrop-blur-xl rounded-3xl p-8 border border-orange-500/30 hover:border-orange-400/50 transition-all duration-500 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-center gap-3 mb-8">
-                      <Calendar className="w-8 h-8 text-orange-400" />
-                      <h3 className="text-2xl sm:text-3xl font-bold text-white">📌 How It Works</h3>
-                    </div>
-
-                    {/* Timeline */}
-                    <div className="space-y-8">
-                      {/* Round 1 */}
-                      <div className="relative pl-8 border-l-2 border-cyan-400/50">
-                        <div className="absolute -left-[9px] top-0 w-4 h-4 bg-cyan-400 rounded-full animate-pulse"></div>
-                        <div className="bg-black/40 rounded-xl p-6 hover:bg-black/60 transition-all duration-300">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="text-xl font-bold text-cyan-400">✅</span>
-                            <h4 className="text-xl font-bold text-white">Round 1</h4>
-                          </div>
-                          <p className="text-gray-300 text-lg">Online screening</p>
-                          <p className="text-sm text-gray-400 mt-2">Remote participation</p>
-                        </div>
-                      </div>
-
-                      {/* Final Round */}
-                      <div className="relative pl-8 border-l-2 border-orange-400/50">
-                        <div className="absolute -left-[9px] top-0 w-4 h-4 bg-orange-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                        <div className="bg-black/40 rounded-xl p-6 hover:bg-black/60 transition-all duration-300">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="text-xl font-bold text-orange-400">🏁</span>
-                            <h4 className="text-xl font-bold text-white">Final Round</h4>
-                          </div>
-                          <p className="text-gray-300 text-lg mb-2">Offline hackathon</p>
-                          <div className="flex items-start gap-2 text-sm text-gray-400 mt-2">
-                            <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-orange-400" />
-                            <span>Jamia Hamdard University</span>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Important Dates */}
-                      <div className="relative pl-8 border-l-2 border-purple-400/50">
-                        <div className="absolute -left-[9px] top-0 w-4 h-4 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-                        <div className="bg-black/40 rounded-xl p-6 hover:bg-black/60 transition-all duration-300">
-                          <div className="flex items-center gap-2 mb-4">
-                            <Clock className="w-6 h-6 text-purple-400" />
-                            <h4 className="text-xl font-bold text-white">Important Dates</h4>
-                          </div>
-                          <div className="space-y-3">
-                            <div className="flex justify-between items-center">
-                              <span className="text-gray-300">Main Event:</span>
-                              <span className="text-white font-bold">🗓 17 January 2026</span>
-                            </div>
-                            <div className="w-full h-px bg-gray-700"></div>
-                            <div className="flex justify-between items-center">
-                              <span className="text-gray-300">Registration Closes:</span>
-                              <span className="text-orange-400 font-bold">⏳ 10 January 2026</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              {/* Animated Background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 via-orange-600/20 to-red-600/20 animate-gradient-x"></div>
+              
+              <div className="relative z-10">
+                <div className="text-6xl sm:text-7xl mb-6">⚠️</div>
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-400 mb-6">
+                  EVENT CANCELLED
+                </h3>
+                <p className="text-xl sm:text-2xl text-white mb-6 leading-relaxed">
+                  We regret to inform you that the SnowFrost Hackathon 2026 has been cancelled.
+                </p>
+                <div className="border-t border-red-500/30 my-8"></div>
+                <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
+                  We apologize for any inconvenience this may cause. All registered participants will be notified directly.
+                </p>
+                <p className="text-lg sm:text-xl text-gray-300 mt-6 leading-relaxed">
+                  Please stay connected with us for future events and opportunities.
+                </p>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
 
-          {/* Call to Action Section */}
+          {/* Future Events Message */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-r from-cyan-900/40 via-purple-900/40 to-orange-900/40 backdrop-blur-xl rounded-3xl p-8 sm:p-12 lg:p-16 border border-cyan-500/30 overflow-hidden"
+            className="relative bg-gradient-to-r from-cyan-900/40 via-purple-900/40 to-blue-900/40 backdrop-blur-xl rounded-3xl p-8 sm:p-12 lg:p-16 border border-cyan-500/30 overflow-hidden"
           >
             {/* Animated Background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 via-purple-600/20 to-orange-600/20 animate-gradient-x"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 via-purple-600/20 to-blue-600/20 animate-gradient-x"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-radial from-cyan-500/20 to-transparent rounded-full blur-3xl animate-float"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-radial from-orange-500/20 to-transparent rounded-full blur-3xl animate-float-delayed"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-radial from-purple-500/20 to-transparent rounded-full blur-3xl animate-float-delayed"></div>
             
             <div className="relative z-10 text-center">
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                If you're confident in your skills, register.
+                Stay Tuned for Future Events
               </h3>
               <p className="text-xl sm:text-2xl text-gray-300 mb-10 leading-relaxed">
-                If not—watch others win. 🏆
+                Join our community to be the first to know about upcoming workshops, events, and hackathons. 🚀
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <a 
-                  href="https://tinyurl.com/h38bcnxm"
+                  href="https://chat.whatsapp.com/DL3S2U6W6zHJFREu11Oht0?mode=ac_t"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative px-10 py-5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-full text-white font-bold text-lg hover:from-cyan-600 hover:via-blue-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-cyan-500/50 overflow-hidden"
+                  className="group relative px-10 py-5 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full text-white font-bold text-lg hover:from-green-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-green-500/50 overflow-hidden"
                   onMouseEnter={handleHover}
                   onClick={handleClick}
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="relative z-10 flex items-center justify-center gap-3">
-                    <Rocket className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
-                    <span>Register Now</span>
-                    <ExternalLink className="w-5 h-5" />
+                    <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Join Our Community</span>
                   </div>
                 </a>
                 
-                <div className="flex items-center gap-3 text-gray-300">
-                  <span className="text-lg">📲 Share with your team</span>
-                </div>
-              </div>
-
-              {/* Countdown Timer Placeholder */}
-              <div className="mt-12 p-6 bg-black/40 rounded-2xl border border-gray-700/50 inline-block">
-                <p className="text-sm text-gray-400 mb-2">Registration closes in:</p>
-                <div className="flex gap-4 text-center">
-                  {[
-                    { value: 'Days', label: 'DAYS' },
-                    { value: 'Hours', label: 'HRS' },
-                    { value: 'Minutes', label: 'MIN' }
-                  ].map((item, index) => (
-                    <div key={index} className="min-w-[80px]">
-                      <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                        --
-                      </div>
-                      <div className="text-xs text-gray-500 mt-1">{item.label}</div>
-                    </div>
-                  ))}
-                </div>
+                <a 
+                  href="https://www.linkedin.com/company/spark-tech-ai-hub/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative px-10 py-5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-bold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110 shadow-2xl hover:shadow-blue-500/50 overflow-hidden"
+                  onMouseEnter={handleHover}
+                  onClick={handleClick}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="relative z-10 flex items-center justify-center gap-3">
+                    <Linkedin className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
+                    <span>Follow Us on LinkedIn</span>
+                  </div>
+                </a>
               </div>
             </div>
           </motion.div>
