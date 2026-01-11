@@ -538,7 +538,7 @@ function App() {
         </div>
       </section>
 
-      {/* ❄️🔥 SnowFrost Hackathon 2026 - CANCELLED ❄️🔥 */}
+      {/* ⚠️ SnowFrost Hackathon 2026 - CANCELLED ⚠️ */}
       <section id="hackathon" className="py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Animated Background Effects */}
         <div className="absolute inset-0 pointer-events-none">
@@ -598,12 +598,12 @@ function App() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-r from-cyan-900/40 via-purple-900/40 to-blue-900/40 backdrop-blur-xl rounded-3xl p-8 sm:p-12 lg:p-16 border border-cyan-500/30 overflow-hidden"
+            className="relative bg-gradient-to-r from-purple-900/40 via-blue-900/40 to-purple-900/40 backdrop-blur-xl rounded-3xl p-8 sm:p-12 lg:p-16 border border-purple-500/30 overflow-hidden"
           >
             {/* Animated Background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 via-purple-600/20 to-blue-600/20 animate-gradient-x"></div>
-            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-radial from-cyan-500/20 to-transparent rounded-full blur-3xl animate-float"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-radial from-purple-500/20 to-transparent rounded-full blur-3xl animate-float-delayed"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-blue-600/20 to-purple-600/20 animate-gradient-x"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-radial from-purple-500/20 to-transparent rounded-full blur-3xl animate-float"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-radial from-blue-500/20 to-transparent rounded-full blur-3xl animate-float-delayed"></div>
             
             <div className="relative z-10 text-center">
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
