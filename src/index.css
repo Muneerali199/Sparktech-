@@ -50,8 +50,8 @@ body {
   
   /* Cartoon Style Animations */
   .cartoon-text {
-    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2),
-                 6px 6px 0px rgba(0, 0, 0, 0.1);
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.15),
+                 5px 5px 0px rgba(0, 0, 0, 0.08);
     animation: cartoon-pop 0.6s ease-out;
   }
   
