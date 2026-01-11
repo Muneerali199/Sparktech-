@@ -115,9 +115,9 @@ function App() {
 
   const teamMembers: TeamMember[] = [
     {
-      name: "Fardeen Ansari",
+      name: "Fardeen Princess Ansari",
       role: "Founder & CEO",
-      bio: "Visionary leader driving innovation and growth in AI technologies.",
+      bio: "Visionary leader and princess of innovation, driving growth in AI technologies with passion and creativity.",
       social: {
         linkedin: "https://www.linkedin.com/in/fardeen-ansari-642a352aa",
         github: "#"
@@ -419,38 +419,103 @@ function App() {
         </div>
       </nav>
 
-      {/* Enhanced Hero Section */}
+      {/* Enhanced Hero Section - Cartoon Style */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-0">
         <div className="text-center max-w-5xl mx-auto">
           <div 
             className="transform transition-all duration-1000"
             style={{ transform: `translateY(${scrollY * 0.1}px)` }}
           >
-            {/* Floating Elements */}
+            {/* Floating Cartoon Elements */}
             <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-float"></div>
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-float-delayed"></div>
             
+            {/* Fun Cartoon Decorations */}
+            <div className="absolute top-10 left-10 text-4xl animate-bounce" style={{ animationDelay: '0.2s' }}>⭐</div>
+            <div className="absolute top-20 right-20 text-3xl animate-bounce" style={{ animationDelay: '0.5s' }}>✨</div>
+            <div className="absolute bottom-20 left-32 text-5xl animate-bounce" style={{ animationDelay: '0.8s' }}>💫</div>
+            <div className="absolute bottom-32 right-16 text-4xl animate-bounce" style={{ animationDelay: '1s' }}>🎨</div>
+            
             <div className="relative">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x leading-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x leading-tight cartoon-text">
                 Welcome to Spark Tech AI Hub! 
                 <span className="inline-block animate-bounce ml-2">🚀</span>
               </h1>
               
               <div className="relative mb-8 sm:mb-10">
-                <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-6 sm:mb-8 leading-relaxed animate-fade-in-up px-2">
+                <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 mb-6 sm:mb-8 leading-relaxed animate-fade-in-up px-2 cartoon-bounce">
                   Get ready to ignite your potential where{' '}
-                  <span className="text-cyan-400 font-semibold relative">
+                  <span className="text-cyan-400 font-semibold relative cartoon-wiggle inline-block">
                     Artificial Intelligence
                     <div className="absolute inset-0 bg-cyan-400/20 blur-lg animate-pulse"></div>
                   </span>{' '}
                   meets cutting-edge learning technologies.
+                  <span className="inline-block animate-bounce ml-2">🎯</span>
                 </p>
                 
                 <p className="text-lg sm:text-xl text-gray-400 mb-10 sm:mb-12 max-w-4xl mx-auto animate-fade-in-up leading-relaxed px-2" style={{ animationDelay: '0.3s' }}>
                   We're building a vibrant community of curious minds, change-makers, and tech enthusiasts, 
                   bringing you closer through live events, workshops, and meetups across India! 
                   <span className="inline-block animate-pulse">🇮🇳✨</span>
+                  <span className="inline-block animate-bounce ml-2" style={{ animationDelay: '0.5s' }}>🎪</span>
+                  <span className="inline-block animate-bounce ml-2" style={{ animationDelay: '0.7s' }}>🎊</span>
                 </p>
+
+                {/* Fardeen Princess Introduction */}
+                <div className="relative bg-gradient-to-br from-pink-900/40 via-purple-900/40 to-blue-900/40 backdrop-blur-xl rounded-3xl p-6 sm:p-8 lg:p-10 border border-pink-500/30 overflow-hidden mb-8 sm:mb-10 max-w-4xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+                  {/* Animated Background */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-600/20 via-purple-600/20 to-pink-600/20 animate-gradient-x"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-pink-500/20 to-transparent rounded-full blur-3xl animate-float"></div>
+                  <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-radial from-purple-500/20 to-transparent rounded-full blur-3xl animate-float-delayed"></div>
+                  
+                  {/* Princess Tag */}
+                  <div className="relative z-10 text-center">
+                    <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-pink-500/20 rounded-full border border-pink-400/30">
+                      <span className="text-2xl animate-bounce">👑</span>
+                      <span className="text-pink-300 font-semibold text-sm sm:text-base">Meet Our Founder</span>
+                      <span className="text-2xl animate-bounce" style={{ animationDelay: '0.3s' }}>✨</span>
+                    </div>
+                    
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 bg-clip-text text-transparent animate-gradient-x">
+                      Fardeen Princess Ansari
+                    </h3>
+                    
+                    <p className="text-base sm:text-lg text-pink-200 mb-4 leading-relaxed">
+                      <span className="inline-block animate-bounce mr-1">💝</span>
+                      The inspiring princess of innovation and CEO of Spark Tech AI Hub! 
+                      She leads with passion, creativity, and a vision to transform the tech landscape.
+                      <span className="inline-block animate-bounce ml-1">🌟</span>
+                    </p>
+                    
+                    <p className="text-sm sm:text-base text-purple-200 mb-4 leading-relaxed">
+                      <span className="inline-block mr-1">🎤</span>
+                      As our lead speaker, she brings energy and inspiration to every event!
+                    </p>
+
+                    {/* Event Announcement */}
+                    <div className="mt-6 p-4 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-2xl border border-pink-400/30">
+                      <p className="text-base sm:text-lg text-white font-semibold mb-2">
+                        <span className="inline-block animate-bounce mr-2">💕</span>
+                        Special Announcement
+                        <span className="inline-block animate-bounce ml-2">💕</span>
+                      </p>
+                      <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
+                        Fardeen Princess is looking for a boyfriend! If you'd like to be her girlfriend (or boyfriend), 
+                        come meet her on <span className="text-pink-300 font-bold">17th January</span> at{' '}
+                        <span className="text-cyan-300 font-bold">Jamia Hamdard, Delhi</span>
+                        <span className="inline-block animate-bounce ml-2">💖</span>
+                      </p>
+                    </div>
+
+                    {/* Hackathon Cancelled Note */}
+                    <div className="mt-4 p-3 bg-red-900/30 rounded-xl border border-red-500/30">
+                      <p className="text-xs sm:text-sm text-red-300">
+                        <span className="mr-1">⚠️</span>
+                        Note: SnowFrost Hackathon 2026 has been cancelled
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center animate-fade-in-up px-4" style={{ animationDelay: '0.6s' }}>
