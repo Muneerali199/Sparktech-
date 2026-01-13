@@ -498,22 +498,34 @@ function App() {
                       <div className="mb-4">
                         <p className="text-xl sm:text-2xl text-white font-bold mb-2 animate-pulse">
                           <span className="inline-block mr-2">📅</span>
-                          SAVE THE DATE!
+                          SAVE THE DATES!
                           <span className="inline-block ml-2">📅</span>
                         </p>
                       </div>
                       
-                      {/* Event Details */}
+                      {/* Online Session - Jan 14 */}
+                      <div className="bg-purple-500/20 rounded-2xl p-4 mb-3 backdrop-blur-sm border border-purple-400/30">
+                        <p className="text-lg sm:text-xl text-purple-200 font-bold mb-2">
+                          <span className="inline-block mr-1">💬</span>
+                          14th January 2026 - Online Session
+                        </p>
+                        <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
+                          <span className="inline-block mr-1">🎥</span>
+                          Join us for a friendly virtual meetup on Google Meet with Fardeen Princess and team members!
+                        </p>
+                      </div>
+                      
+                      {/* Main Event Details - Jan 17 */}
                       <div className="bg-white/10 rounded-2xl p-4 mb-4 backdrop-blur-sm">
                         <p className="text-2xl sm:text-3xl text-pink-200 font-bold mb-3">
-                          17th January 2026
+                          17th January 2026 - Main Event
                         </p>
                         <p className="text-lg sm:text-xl text-cyan-200 font-semibold mb-2">
                           📍 Jamia Hamdard, Delhi
                         </p>
                         <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
                           <span className="inline-block animate-bounce mr-1">✨</span>
-                          Join us for an exciting meetup and networking session!
+                          Join us for an exciting in-person meetup and networking session!
                           <span className="inline-block animate-bounce ml-1">✨</span>
                         </p>
                       </div>
