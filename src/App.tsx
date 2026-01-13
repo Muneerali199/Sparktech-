@@ -492,18 +492,49 @@ function App() {
                       As our lead speaker, she brings energy and inspiration to every event!
                     </p>
 
-                    {/* Event Announcement */}
-                    <div className="mt-6 p-4 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-2xl border border-pink-400/30">
-                      <p className="text-base sm:text-lg text-white font-semibold mb-2">
-                        <span className="inline-block animate-bounce mr-2">💕</span>
-                        Special Announcement
-                        <span className="inline-block animate-bounce ml-2">💕</span>
-                      </p>
-                      <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
-                        Fardeen Princess is looking for a boyfriend! If you'd like to be her girlfriend (or boyfriend), 
-                        come meet her on <span className="text-pink-300 font-bold">17th January</span> at{' '}
-                        <span className="text-cyan-300 font-bold">Jamia Hamdard, Delhi</span>
-                        <span className="inline-block animate-bounce ml-2">💖</span>
+                    {/* Event Announcement - Enhanced Reminder */}
+                    <div className="mt-6 p-6 bg-gradient-to-br from-pink-600/30 via-purple-600/30 to-cyan-600/30 rounded-3xl border-2 border-pink-400/50 shadow-2xl hover:shadow-pink-500/50 transition-all duration-300">
+                      {/* Save the Date Header */}
+                      <div className="mb-4">
+                        <p className="text-xl sm:text-2xl text-white font-bold mb-2 animate-pulse">
+                          <span className="inline-block mr-2">📅</span>
+                          SAVE THE DATES!
+                          <span className="inline-block ml-2">📅</span>
+                        </p>
+                      </div>
+                      
+                      {/* Online Session - Jan 14 */}
+                      <div className="bg-purple-500/20 rounded-2xl p-4 mb-3 backdrop-blur-sm border border-purple-400/30">
+                        <p className="text-lg sm:text-xl text-purple-200 font-bold mb-2">
+                          <span className="inline-block mr-1">💬</span>
+                          14th January 2026 - Online Session
+                        </p>
+                        <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
+                          <span className="inline-block mr-1">🎥</span>
+                          Join us for a friendly virtual meetup on Google Meet with Fardeen Princess and team members!
+                        </p>
+                      </div>
+                      
+                      {/* Main Event Details - Jan 17 */}
+                      <div className="bg-white/10 rounded-2xl p-4 mb-4 backdrop-blur-sm">
+                        <p className="text-2xl sm:text-3xl text-pink-200 font-bold mb-3">
+                          17th January 2026 - Main Event
+                        </p>
+                        <p className="text-lg sm:text-xl text-cyan-200 font-semibold mb-2">
+                          📍 Jamia Hamdard, Delhi
+                        </p>
+                        <p className="text-sm sm:text-base text-gray-200 leading-relaxed">
+                          <span className="inline-block animate-bounce mr-1">✨</span>
+                          Join us for an exciting in-person meetup and networking session!
+                          <span className="inline-block animate-bounce ml-1">✨</span>
+                        </p>
+                      </div>
+                      
+                      {/* Special Message */}
+                      <p className="text-sm sm:text-base text-pink-200 leading-relaxed italic">
+                        <span className="inline-block animate-bounce mr-1">💕</span>
+                        Come meet Fardeen Princess and the entire Spark Tech AI Hub team!
+                        <span className="inline-block animate-bounce ml-1">💖</span>
                       </p>
                     </div>
 
